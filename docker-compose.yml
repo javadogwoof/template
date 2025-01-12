@@ -1,4 +1,9 @@
 services:
+  api:
+    container_name: api
+    image: api:0.0.1-SNAPSHOT
+    ports:
+      - 8080:8080
   client: 
     container_name: client
     build: ./client
@@ -10,7 +15,7 @@ services:
         source: node_modules
         target: /app/node_modules
     ports:
-      - 2025:5173
+      - 3000:5173
         
 volumes:
   node_modules:
