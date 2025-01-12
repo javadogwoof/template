@@ -1,0 +1,17 @@
+services:
+  client: 
+    container_name: client
+    build: ./client
+    volumes:
+      - type: bind
+        source: ./client
+        target: /app
+      - type: volume
+        source: node_modules
+        target: /app/node_modules
+    ports:
+      - 2025:5173
+        
+volumes:
+  node_modules:
+    name: node_modules
